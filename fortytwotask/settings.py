@@ -50,6 +50,11 @@ MIDDLEWARE_CLASSES = (
     'tasks42.middleware.SaveHttpRequest',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'tasks42.context_processors.AddSettingsToContext',
+)
+
 ROOT_URLCONF = 'fortytwotask.urls'
 
 WSGI_APPLICATION = 'fortytwotask.wsgi.application'

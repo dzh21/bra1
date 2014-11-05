@@ -59,6 +59,16 @@ class MainViewTest(TestCase):
         response = self.client.get('/requests/')
         self.assertEquals(response.status_code, 200)
 
+    def test_root_url_for_setting_in_context(self):
+        response = self.client.get('/')
+        self.assertEquals(response.status_code, 200)
+
+        settings_in_context = response.context['settings']
+        self.assertEquals(len(list(settings_in_context)) > 0, True)
+
+        self.assertEquals(settings_in_context['USE_TZ'], True)
+        self.assertEquals(settings_in_context['TIME_ZONE'], 'Europe/Minsk')
+
 
 class RequestsViewTest(TestCase):
 
@@ -74,3 +84,4 @@ class RequestsViewTest(TestCase):
 
         # content
         self.assertIn('Request #', response.content)
+
