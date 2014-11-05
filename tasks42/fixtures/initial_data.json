@@ -189,6 +189,33 @@
   }
 },
 {
+  "pk": 22, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "add_person", 
+    "name": "Can add person", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 23, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "change_person", 
+    "name": "Can change person", 
+    "content_type": 8
+  }
+},
+{
+  "pk": 24, 
+  "model": "auth.permission", 
+  "fields": {
+    "codename": "delete_person", 
+    "name": "Can delete person", 
+    "content_type": 8
+  }
+},
+{
   "pk": 1, 
   "model": "auth.user", 
   "fields": {
@@ -198,7 +225,7 @@
     "is_active": true, 
     "is_superuser": true, 
     "is_staff": true, 
-    "last_login": "2014-11-05T18:56:33.633Z", 
+    "last_login": "2014-11-05T19:41:06.072Z", 
     "groups": [], 
     "user_permissions": [], 
     "password": "pbkdf2_sha256$12000$VpQiQPqWhsvV$DXFUbPU/urH08o6VntX5HrulcKqlk3SDBEBceKgCOvI=", 
@@ -207,11 +234,55 @@
   }
 },
 {
+  "pk": "634xp08ar2g26ffxw2ob5qm7fbbh1gpd", 
+  "model": "sessions.session", 
+  "fields": {
+    "expire_date": "2014-11-19T19:43:15.043Z", 
+    "session_data": "MjY3ZWRkMDkzMzVhNjc1NjcyMGE0NmJkMTA5ZTdiZWYzNDVkNzhkZDp7fQ=="
+  }
+},
+{
   "pk": "kb1sl1dpz7ooc41qwoglc0qxt7gdexq8", 
   "model": "sessions.session", 
   "fields": {
     "expire_date": "2014-11-19T18:56:39.022Z", 
     "session_data": "MjY3ZWRkMDkzMzVhNjc1NjcyMGE0NmJkMTA5ZTdiZWYzNDVkNzhkZDp7fQ=="
+  }
+},
+{
+  "pk": 1, 
+  "model": "south.migrationhistory", 
+  "fields": {
+    "applied": "2014-11-05T19:40:14.859Z", 
+    "app_name": "tasks42", 
+    "migration": "0001_initial"
+  }
+},
+{
+  "pk": 1, 
+  "model": "tasks42.person", 
+  "fields": {
+    "bio": "I was born in Lubetch Chernigov region Ukraine. In 1995 moved to Belarus. In 2001-2006 studied in The Belarusian State University of Informatics and Radioelectronics.", 
+    "surname": "Davliud", 
+    "name": "Evhen", 
+    "other_contacts": "phone +375297602862", 
+    "date_of_birth": "1983-07-21", 
+    "skype": "dzha21", 
+    "jabber": "dzh@default.rs", 
+    "email": "dzh21@tut.by"
+  }
+},
+{
+  "pk": 1, 
+  "model": "admin.logentry", 
+  "fields": {
+    "action_flag": 1, 
+    "action_time": "2014-11-05T19:43:06.261Z", 
+    "object_repr": "Evhen Davliud", 
+    "object_id": "1", 
+    "change_message": "", 
+    "user": 1, 
+    "content_type": 8
   }
 }
 ]
