@@ -27,18 +27,18 @@ class MainViewTest(TestCase):
 
         persons_in_context = response.context['persons']
 
-        self.assertEquals(persons_in_context.name, self.me.name)
-        self.assertEquals(persons_in_context.surname, self.me.surname)
+        self.assertEquals(persons_in_context[0].name, self.me.name)
+        self.assertEquals(persons_in_context[0].surname, self.me.surname)
         self.assertEquals(
-            persons_in_context.date_of_birth,
+            persons_in_context[0].date_of_birth,
             self.me.date_of_birth
         )
-        self.assertEquals(persons_in_context.bio, self.me.bio)
-        self.assertEquals(persons_in_context.email, self.me.email)
-        self.assertEquals(persons_in_context.jabber, self.me.jabber)
-        self.assertEquals(persons_in_context.skype, self.me.skype)
+        self.assertEquals(persons_in_context[0].bio, self.me.bio)
+        self.assertEquals(persons_in_context[0].email, self.me.email)
+        self.assertEquals(persons_in_context[0].jabber, self.me.jabber)
+        self.assertEquals(persons_in_context[0].skype, self.me.skype)
         self.assertEquals(
-            persons_in_context.other_contacts,
+            persons_in_context[0].other_contacts,
             self.me.other_contacts
         )
 

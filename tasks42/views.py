@@ -3,5 +3,5 @@ from tasks42.models import Person
 
 
 def index(request):
-    context = {'persons': Person.objects.all()[0]}
+    context = {'persons': Person.objects.all()}
     return render(request, "home.html", context)
