@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from tasks42.models import Person
 
-# Create your views here.
+
+def index(request):
+    context = {'persons': Person.objects.all()[0]}
+    return render(request, "home.html", context)
