@@ -53,3 +53,24 @@ class MainViewTest(TestCase):
         self.assertIn(self.me.jabber, response.content)
         self.assertIn(self.me.skype, response.content)
         self.assertIn(self.me.other_contacts, response.content)
+
+        # test requests link
+        self.assertIn('requests', response.content)
+        response = self.client.get('/requests/')
+        self.assertEquals(response.status_code, 200)
+
+
+class RequestsViewTest(TestCase):
+
+    def test_requests_link(self):
+        response = self.client.get('/requests/')
+        self.assertEquals(response.status_code, 200)
+
+        self.assertTemplateUsed(response, 'requests.html')
+
+        # context
+        requests_in_context = response.context['requests']
+        self.assertEquals(len(list(requests_in_context)) > 0, True)
+
+        # content
+        self.assertIn('Request #', response.content)
