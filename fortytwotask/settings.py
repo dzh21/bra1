@@ -47,6 +47,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tasks42.middleware.SaveHttpRequest',
 )
 
 ROOT_URLCONF = 'fortytwotask.urls'
@@ -73,10 +74,11 @@ TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
+DATETIME_FORMAT = 'Y-m-d H:i:s'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

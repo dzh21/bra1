@@ -9,7 +9,7 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#request{{req.id}}">
-                  Request #{{req.id}} from {{ req.remote_address }} at {{ req.event_date_time }}
+                  Request #{{req.id}} from {{ req.remote_address }} at {{ req.event_date_time|date:'Y-m-d H:i:s' }}
                 </a>
               </h4>
             </div>

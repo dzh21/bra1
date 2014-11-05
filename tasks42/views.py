@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from tasks42.models import Person
+from tasks42.models import Person, RequestObject
 
 
 def index(request):
@@ -8,5 +8,5 @@ def index(request):
 
 
 def requests(request):
-    context = {'requests': []}
+    context = {'requests': RequestObject.objects.all()}
     return render(request, "requests.html", context)
