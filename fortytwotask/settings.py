@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'tasks42.context_processors.AddSettingsToContext',
+    'tasks42.context_processors.add_settings_to_context',
 )
 
 ROOT_URLCONF = 'fortytwotask.urls'
