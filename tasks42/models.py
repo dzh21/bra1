@@ -10,6 +10,7 @@ class Person(models.Model):
     jabber = models.EmailField()
     skype = models.CharField(max_length=50)
     other_contacts = models.TextField()
+    test_field = models.CharField(max_length=10)
 
     def __unicode__(self):
         return self.name + ' ' + self.surname
