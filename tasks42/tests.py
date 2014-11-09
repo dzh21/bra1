@@ -1,6 +1,7 @@
 from django.test import TestCase
-from tasks42.models import Person
+from tasks42.models import Person, RequestObject
 from datetime import date
+from django.utils import timezone
 
 
 class MainViewTest(TestCase):
@@ -77,10 +78,25 @@ class RequestsViewTest(TestCase):
 
         self.assertTemplateUsed(response, 'requests.html')
 
+        for i in xrange(20):
+            response = self.client.get('/requests/')
+
         # context
         requests_in_context = response.context['requests']
-        self.assertEquals(len(list(requests_in_context)) > 0, True)
+        requests_list = list(requests_in_context)
+        self.assertEquals(len(requests_list), 10)
+
+        first_ten_requests_list = list(RequestObject.objects.order_by(
+            'event_date_time'
+        ))[:10]
+
+        self.assertEquals(requests_list, first_ten_requests_list)
 
         # content
         self.assertIn('Request #', response.content)
-
+        self.assertIn(timezone.localtime(
+            first_ten_requests_list[0].event_date_time
+        ).strftime('%Y-%m-%d %H:%M:%S'), response.content)
+        self.assertIn(timezone.localtime(
+            first_ten_requests_list[9].event_date_time
+        ).strftime('%Y-%m-%d %H:%M:%S'), response.content)
