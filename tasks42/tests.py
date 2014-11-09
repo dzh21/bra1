@@ -17,6 +17,7 @@ class MainViewTest(TestCase):
             jabber="dzh@default.rs",
             skype="dzha21",
             other_contacts="phone +375297602862",
+            test_field="hoho",
         )
 
     def test_root_url(self):
