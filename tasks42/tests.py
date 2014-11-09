@@ -92,7 +92,7 @@ class RequestsViewTest(TestCase):
 
         self.assertEquals(requests_list, first_ten_requests_list)
 
-        # content test
+        # content
         self.assertIn('Request #', response.content)
         self.assertIn(timezone.localtime(
             first_ten_requests_list[0].event_date_time
