@@ -10,7 +10,6 @@ class Person(models.Model):
     jabber = models.EmailField()
     skype = models.CharField(max_length=50)
     other_contacts = models.TextField()
-    test_field = models.CharField(max_length=10)
 
     def __unicode__(self):
         return self.name + ' ' + self.surname
@@ -20,6 +19,7 @@ class RequestObject(models.Model):
     desc = models.TextField()
     remote_address = models.CharField(max_length=20, default='localhost')
     event_date_time = models.DateTimeField()
+    simple_field = models.IntegerField()
 
     def __unicode__(self):
         return "Request #" + str(self.id)

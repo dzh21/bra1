@@ -9,4 +9,5 @@ class SaveHttpRequest(object):
         req.desc = request
         req.remote_address = request.META['REMOTE_ADDR']
         req.event_date_time = timezone.now()
+        req.simple_field = 1
         req.save()
